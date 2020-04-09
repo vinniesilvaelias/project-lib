@@ -53,9 +53,8 @@ bool reg(int num){
     }
     div[j] = i;
     for(i=0;i<j;i++){
-        if(div[i]!=2&&div[i]!=3&&div[i]!=5){
+        if(div[i]!=2&&div[i]!=3&&div[i]!=5)
             is_reg = false;
-        }
     }
     return is_reg;
 }
@@ -84,22 +83,19 @@ bool palindromo(string palavra){
 //1C5 CONVERTE PARA MINUSCULA
 string to_lower_case(string palavra){
     string pal = "";
-    for( int i=0; i<(int)palavra.size(); i++ ){
+    for( int i=0; i<(int)palavra.size(); i++ )
         pal+= ( palavra[i] >= 'A' && palavra[i] <= 'Z')? ( palavra[i] -'A'+'a' ): palavra[i];
-    }
     return pal;
 }
 //1C6 COVERTE PARA MAIUSCULO
 string to_upper_case(string palavra){
     string pal = "";
-    for( int i=0; i<(int)palavra.size(); i++ ){
+    for( int i=0; i<(int)palavra.size(); i++ )
         pal+= ( palavra[i] >= 'a' && palavra[i] <= 'z')? ( palavra[i] -'a'+'A' ): palavra[i];
-    }
     return pal;
 }
 //1C7 CAIXA COM TEXTO CENTRALIZADO
 void caixa_com_texto_centralizado(int length, char border, string text){
-
     int sizeText = text.end() - text.begin();
     int count = 0;
     int tabs = length - sizeText - 2;
@@ -160,7 +156,6 @@ void troca(int* pt_a, int* pt_b,int* pt_c){
     if(*pt_c>= *pt_a){// A MENOR QUE C
         if(*pt_a >= *pt_b){ // B MENOR QUE A
            //C MAIOR B MENOR 2 1 5
-
             aux = *pt_a;//2
             *pt_a = *pt_b;//1
             *pt_b = aux;//2
@@ -179,7 +174,6 @@ int compare(char* s, char* t){
     while (s[i])i++;
     while (t[j]) j++;
     while ((s[count] && t[count]) && (s[count] == t[count])) count++;
-
     if(s[count]==t[count]){
         if( i == j)
             r = 0;
@@ -196,9 +190,8 @@ int compare(char* s, char* t){
 }
 //2B1 CONVERTE PARA INT
 int toInt(char* p){
-    int count, base = 1, num;
-    count =  num = 0;
-    while (p[count])  count++;
+    int count, base = 1, num = 0;
+    count =  strlen(p);
     while(count != 0){
         if(p[count-1] == '-')
             num*=-1;
@@ -225,7 +218,6 @@ int strlen(string s){
     while (s[count]) count++;
     return count;
 }
-
 int count(string s, char ch, int size){
     int count = 0;
     for (int i = 0; i < size; i++){
@@ -233,7 +225,6 @@ int count(string s, char ch, int size){
     }
     return count+1;
 }
-
 string* split (string s, char ch, int &n){
     int size_text = strlen(s);
     n = count(s, ch, size_text);
@@ -251,7 +242,6 @@ string* split (string s, char ch, int &n){
     t[j] = r;
     return t;
 }
-
 void printText(string* t, int n){
     cout << '\n';
     for (int i=0;i<n;++i) cout << "=> STRING " << i+1 << ": "<< t[i] << endl;
@@ -361,7 +351,6 @@ int length(int* v){
     while (v[count]) count++;
     return count;
 }
-
 void search(int* p, int &g, int &l){
     int length_v = length(p);
     int maior = -999999999;
@@ -379,17 +368,16 @@ void search(int* p, int &g, int &l){
 }
 //2D6 SOMA MATRIZ
 void readmat(int** m, int l, int c){
-    for(int i=0;i<l;i++){
+    for(int i=0;i<l;i++)
         for(int j=0;j<c;j++) cin >> m[i][j];
-    }
 }
 int** newmat(int l, int c){
     int** mat = new int*[l];
-    for(int i=0;i<l;i++)mat[i] = new int[c];
+    for(int i=0;i<l;i++) mat[i] = new int[c];
     return mat;
 }
 void deletemat(int**m,int l){
-    for(int i=0;i<l;i++) delete [] m[i];
+    for(int i=0;i<l;i++) delete m[i];
     delete [] m;
 }
 void printmat(int** m, int l, int c){
@@ -405,4 +393,3 @@ int** soma_matriz(int** A, int** B, int l, int c){
     }
     return C;
 }
-
