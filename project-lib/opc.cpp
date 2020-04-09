@@ -276,8 +276,16 @@ void opc14(){
         cout << "\n>> INFORME UM NUMERO INTEIRO: ";
         cin.ignore();
         gets(p);
-        int y = toInt(p);
-        cout << "\n=> CONVERTERNDO STRING PARA INT: " << y;
+       int size = strlen(p);
+        if(size > 9){
+            system("cls");
+            cout << "\n=> NAO SUPORTADO PELA VARIAVEL!!!";
+            _sleep(2500);
+        }
+        else{
+            int y = toInt(p);
+            cout << "\n=> CONVERTERNDO STRING PARA INT: " << y;
+        }
         cout << "\n\n>> MENU PRINCIPAL [0]\n>> CONTINUAR      [1]\n>> ";
         cin >> x;
         system("cls");
