@@ -1,7 +1,6 @@
 #include"mylib.h"
 using namespace std;
 int main(){
-
     dpy_begin();
     _sleep(5000);
     system("cls");
@@ -82,5 +81,4 @@ int main(){
     }
     system("cls");
     dpy_end();
-
 }
